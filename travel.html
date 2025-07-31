@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安吉2日游行程规划</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .weather-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .weather-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #4a5568;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .weather-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .weather-card {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .weather-date {
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .weather-temp {
+            font-size: 1.2rem;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .weather-condition {
+            color: #718096;
+        }
+
+        .itinerary-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .itinerary-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #4a5568;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .day-plan {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+
+        .day-title {
+            font-size: 1.3rem;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .activity {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .activity-time {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .activity-name {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .activity-details {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        .map-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .map-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #4a5568;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .map-container {
+            height: 400px;
+            background: #e2e8f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: #718096;
+        }
+
+        .map-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .attractions-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .attractions-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #4a5568;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .attraction-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .attraction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .attraction-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .attraction-info {
+            padding: 15px;
+        }
+
+        .attraction-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2d3748;
+        }
+
+        .attraction-rating {
+            color: #f6ad55;
+            margin-bottom: 8px;
+        }
+
+        .attraction-description {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .weather-grid,
+            .attractions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>安吉2日游行程规划</h1>
+            <div class="subtitle">南通如皋 → 浙江安吉 | 8月1日-2日</div>
+        </header>
+
+        <section class="weather-section">
+            <h2 class="weather-title">天气预报</h2>
+            <div class="weather-grid">
+                <div class="weather-card">
+                    <div class="weather-date">8月1日 (周五)</div>
+                    <div class="weather-condition">安吉: 小雨</div>
+                    <div class="weather-temp">36°C / 23°C</div>
+                    <div class="weather-condition">如皋: 多云</div>
+                    <div class="weather-temp">32°C / 26°C</div>
+                </div>
+                <div class="weather-card">
+                    <div class="weather-date">8月2日 (周六)</div>
+                    <div class="weather-condition">安吉: 大雨转小雨</div>
+                    <div class="weather-temp">34°C / 24°C</div>
+                    <div class="weather-condition">如皋: 大雨</div>
+                    <div class="weather-temp">32°C / 26°C</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="itinerary-section">
+            <h2 class="itinerary-title">行程安排</h2>
+            
+            <div class="day-plan">
+                <h3 class="day-title">第一天 (8月1日) - 安吉将军关漂流</h3>
+                
+                <div class="activity">
+                    <div class="activity-time">06:30 - 10:00</div>
+                    <div class="activity-name">从如皋出发前往安吉</div>
+                    <div class="activity-details">驾车约3.5小时，距离约295公里</div>
+                </div>
+                
+                <div class="activity">
+                    <div class="activity-time">10:30 - 12:00</div>
+                    <div class="activity-name">前往将军关漂流</div>
+                    <div class="activity-details">从安吉县城驾车约1.2小时，距离约46公里</div>
+                </div>
+                
+                <div class="activity">
+                    <div class="activity-time">12:00 - 16:30</div>
+                    <div class="activity-name">将军关探险漂流</div>
+                    <div class="activity-details">
+                        <p>将军关探险漂流(暂停开放) - 位于章村镇将军关探险漂流游客中心东侧</p>
+                        <p>门票: 90元 | 评级: 4.3分</p>
+                        <p>开放时间: 05-01至10-08 周六至周日 09:00-16:30 最晚进入16:30</p>
+                        <p>注意: 根据查询结果显示该景点目前暂停开放，请提前确认是否开放</p>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="activity-time">17:00 - 18:30</div>
+                    <div class="activity-name">前往浙北大峡谷</div>
+                    <div class="activity-details">驾车约1.4小时，距离约47公里</div>
+                </div>
+                
+                <div class="activity">
+                    <div class="activity-time">19:00 - 20:00</div>
+                    <div class="activity-name">晚餐</div>
+                    <div class="activity-details">在当地餐厅享用晚餐</div>
+                </div>
+                
+                <div class="activity">
+                    <div class="activity-time">20:00</div>
+                    <div class="activity-name">入住酒店</div>
+                    <div class="activity-details">建议选择安吉县城或浙北大峡谷附近酒店</div>
+                </div>
+            </div>
+            
+            <div class="day-plan">
+                <h3 class="day-title">第二天 (8月2日) - 浙北大峡谷 & 返程</h3>
+                
+                <div class="activity">
+                    <div class="activity-time">08:00 - 12:00</div>
+                    <div class="activity-name">游览浙北大峡谷景区</div>
+                    <div class="activity-details">
+                        <p>浙北大峡谷景区 - 位于上墅乡董岭村</p>
+                        <p>评级: 4.5分 | AAAA级景区</p>
+                        <p>开放时间: 08:00-17:00 最晚进入16:30</p>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="activity-time">12:00 - 13:30</div>
+                    <div class="activity-name">午餐</div>
+                    <div class="activity-details">在景区附近享用午餐</div>
+                </div>
+                
+                <div class="activity">
+                    <div class="activity-time">14:00 - 18:00</div>
+                    <div class="activity-name">返回南通如皋</div>
+                    <div class="activity-details">驾车约4小时，距离约336公里</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2 class="map-title">行程路线图</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <p>行程路线图 (高德地图集成)</p>
+                    <p>路线: 南通如皋 → 安吉将军关漂流 → 浙北大峡谷 → 南通如皋</p>
+                    <p>总里程: 约722公里</p>
+                </div>
+            </div>
+            <p style="text-align: center; color: #718096;">
+                注：实际路线可在高德地图APP中查看和导航
+            </p>
+        </section>
+
+        <section class="attractions-section">
+            <h2 class="attractions-title">景点介绍</h2>
+            <div class="attractions-grid">
+                <div class="attraction-card">
+                    <div class="attraction-image" style="background-image: url('http://store.is.autonavi.com/showpic/64dad73b30edc439a4f6ea84d5cedae5'); background-size: cover;"></div>
+                    <div class="attraction-info">
+                        <div class="attraction-name">将军关探险漂流</div>
+                        <div class="attraction-rating">★★★★☆ 4.3分</div>
+                        <div class="attraction-description">
+                            位于章村镇将军关探险漂流游客中心东侧，是一个刺激的水上活动场所。
+                            注意：查询显示该景点当前暂停开放，请提前确认开放情况。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="attraction-card">
+                    <div class="attraction-image" style="background-image: url('http://store.is.autonavi.com/showpic/944b4226a7c4ab3bdc54ba0d048f6c70'); background-size: cover;"></div>
+                    <div class="attraction-info">
+                        <div class="attraction-name">浙北大峡谷景区</div>
+                        <div class="attraction-rating">★★★★☆ 4.5分</div>
+                        <div class="attraction-description">
+                            位于上墅乡董岭村，AAAA级景区，以峡谷风光和自然景观著称。
+                            开放时间: 08:00-17:00，适合徒步和观光。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="attraction-card">
+                    <div class="attraction-image" style="background-image: url('http://store.is.autonavi.com/showpic/894d4b064d8da3c5f4af9405ff96392d'); background-size: cover;"></div>
+                    <div class="attraction-info">
+                        <div class="attraction-name">云上草原国际山地旅游度假区</div>
+                        <div class="attraction-rating">★★★★☆ 4.5分</div>
+                        <div class="attraction-description">
+                            位于山川乡山川村，高山旅游度假区，夏季避暑胜地。
+                            开放时间: 9:00-21:00，适合家庭游玩。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 安吉旅游攻略 | 行程总里程: 约722公里 | 预计行驶时间: 约15小时</p>
+            <p>提示: 请根据天气情况携带雨具，提前确认景点开放状态</p>
+        </footer>
+    </div>
+</body>
+</html>
