@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026年7月17日至19日，如皋自驾衢州三日舒适型旅行攻略。">
+  <title>如皋 → 衢州｜三日自驾旅行手册</title>
+  <style>
+    :root {
+      --ink: #18332f;
+      --muted: #657873;
+      --paper: #f5f1e8;
+      --card: rgba(255, 255, 255, 0.84);
+      --green: #176b57;
+      --green-dark: #0d4d3f;
+      --orange: #d96c3d;
+      --yellow: #f0b84b;
+      --line: rgba(23, 107, 87, 0.17);
+      --shadow: 0 20px 60px rgba(24, 51, 47, 0.12);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 6%, rgba(240, 184, 75, 0.22), transparent 25rem),
+        radial-gradient(circle at 90% 25%, rgba(23, 107, 87, 0.14), transparent 30rem),
+        var(--paper);
+      font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    button { font: inherit; }
+    .shell { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .site-nav {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      border-bottom: 1px solid rgba(255,255,255,.5);
+      background: rgba(245, 241, 232, .82);
+      backdrop-filter: blur(18px);
+    }
+    .nav-inner { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 900; text-decoration: none; letter-spacing: -.03em; }
+    .brand span { color: var(--orange); }
+    .nav-links { display: flex; gap: 22px; font-size: 14px; font-weight: 700; }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: var(--green); }
+    .hero { padding: 74px 0 46px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 54px; }
+    .hero h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: Georgia, "Songti SC", serif;
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: .98;
+      letter-spacing: -.06em;
+    }
+    .hero h1 span { display: block; color: var(--green); }
+    .hero-copy { max-width: 660px; margin: 24px 0 30px; color: var(--muted); font-size: 18px; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid var(--green);
+      border-radius: 999px;
+      background: var(--green);
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(23,107,87,.2); }
+    .button.secondary { background: transparent; color: var(--green); }
+    .route-card {
+      position: relative;
+      min-height: 390px;
+      padding: 34px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 42px;
+      background: linear-gradient(145deg, #1a745e, #0c483b);
+      color: white;
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+    }
+    .route-card::after {
+      position: absolute;
+      right: 26px;
+      bottom: 20px;
+      content: "衢";
+      color: rgba(255,255,255,.08);
+      font-family: serif;
+      font-size: 170px;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .route-date { color: #f6d58d; font-weight: 800; }
+    .route-line { position: relative; z-index: 1; margin: 64px 0 48px; }
+    .route-stop { display: flex; align-items: center; gap: 14px; font-size: 24px; font-weight: 900; }
+    .route-stop::before { width: 12px; height: 12px; border: 4px solid #f6d58d; border-radius: 50%; content: ""; }
+    .route-dash { height: 54px; margin-left: 9px; border-left: 2px dashed rgba(255,255,255,.45); }
+    .route-meta { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .route-meta div { padding-top: 12px; border-top: 1px solid rgba(255,255,255,.25); }
+    .route-meta strong { display: block; font-size: 21px; }
+    .route-meta span { color: rgba(255,255,255,.66); font-size: 12px; }
+    .notice-bar { margin: 10px 0 70px; padding: 18px 22px; border: 1px solid rgba(217,108,61,.2); border-radius: 18px; background: rgba(255,255,255,.57); }
+    .notice-bar strong { color: var(--orange); }
+    section { padding: 64px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 32px; }
+    .section-head h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(34px, 4vw, 52px); line-height: 1.1; letter-spacing: -.04em; }
+    .section-head p:last-child { max-width: 480px; margin: 0; color: var(--muted); }
+    .day-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+    .day-tab { padding: 11px 18px; border: 1px solid var(--line); border-radius: 999px; background: white; color: var(--ink); cursor: pointer; font-weight: 800; }
+    .day-tab[aria-selected="true"] { border-color: var(--green); background: var(--green); color: white; }
+    .day-panel { display: none; }
+    .day-panel.active { display: grid; grid-template-columns: 230px 1fr; gap: 34px; }
+    .day-summary { padding: 26px; border-radius: 24px; background: var(--ink); color: white; align-self: start; }
+    .day-summary .number { color: #f6d58d; font-family: Georgia, serif; font-size: 70px; line-height: 1; }
+    .day-summary h3 { margin: 10px 0; }
+    .day-summary p { margin: 0; color: rgba(255,255,255,.7); font-size: 14px; }
+    .timeline { position: relative; display: grid; gap: 16px; }
+    .timeline::before { position: absolute; top: 20px; bottom: 20px; left: 82px; width: 1px; background: var(--line); content: ""; }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 66px 1fr; gap: 32px; padding: 22px; border: 1px solid rgba(23,107,87,.1); border-radius: 22px; background: var(--card); box-shadow: 0 8px 30px rgba(24,51,47,.05); }
+    .timeline-item time { z-index: 1; color: var(--orange); font-size: 13px; font-weight: 900; }
+    .timeline-item h4 { margin: -5px 0 4px; font-size: 20px; }
+    .timeline-item p { margin: 0; color: var(--muted); }
+    .tag { display: inline-block; margin: 8px 5px 0 0; padding: 3px 9px; border-radius: 99px; background: #e4eee9; color: var(--green-dark); font-size: 12px; font-weight: 800; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .place-card { overflow: hidden; border: 1px solid rgba(23,107,87,.11); border-radius: var(--radius); background: var(--card); box-shadow: 0 12px 34px rgba(24,51,47,.07); }
+    .place-image { position: relative; height: 205px; overflow: hidden; background: #d8e3dc; }
+    .place-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+    .place-card:hover img { transform: scale(1.04); }
+    .place-index { position: absolute; top: 15px; left: 15px; display: grid; width: 38px; height: 38px; place-items: center; border-radius: 50%; background: rgba(255,255,255,.9); font-family: Georgia, serif; font-weight: 900; }
+    .place-body { padding: 22px; }
+    .place-body h3 { margin: 0 0 7px; font-size: 21px; }
+    .place-body p { min-height: 55px; margin: 0; color: var(--muted); font-size: 14px; }
+    .place-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; }
+    .map-link { color: var(--green); font-weight: 900; text-decoration: none; }
+    .food-section { background: var(--ink); color: white; }
+    .food-section .section-head p:last-child { color: rgba(255,255,255,.66); }
+    .food-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; }
+    .food-list, .tip-card { padding: 30px; border: 1px solid rgba(255,255,255,.13); border-radius: var(--radius); background: rgba(255,255,255,.06); }
+    .food-item { display: grid; grid-template-columns: 46px 1fr auto; align-items: start; gap: 14px; padding: 17px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .food-item:last-child { border: 0; }
+    .food-icon { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 14px; background: var(--orange); font-weight: 900; }
+    .food-item h3 { margin: 0; font-size: 17px; }
+    .food-item p { margin: 2px 0 0; color: rgba(255,255,255,.62); font-size: 13px; }
+    .food-item a { color: #f6d58d; font-size: 13px; font-weight: 800; text-decoration: none; }
+    .tip-card h3 { margin-top: 0; font-size: 25px; }
+    .tip-card ul { margin: 0; padding-left: 20px; color: rgba(255,255,255,.75); }
+    .tip-card li + li { margin-top: 12px; }
+    .stay-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .stay-card { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .stay-card.recommended { background: var(--green); color: white; }
+    .stay-label { color: var(--orange); font-size: 12px; font-weight: 900; letter-spacing: .1em; }
+    .stay-card.recommended .stay-label { color: #f6d58d; }
+    .stay-card h3 { margin: 8px 0; font-size: 24px; }
+    .stay-card p { color: var(--muted); }
+    .stay-card.recommended p { color: rgba(255,255,255,.72); }
+    .stay-points { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+    .stay-points span { padding: 5px 10px; border-radius: 99px; background: var(--paper); color: var(--ink); font-size: 12px; font-weight: 800; }
+    .stay-card a { font-weight: 900; }
+    .checklist { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .check-item { padding: 22px; border-radius: 20px; background: rgba(255,255,255,.67); }
+    .check-item strong { display: block; margin-bottom: 5px; }
+    .check-item span { color: var(--muted); font-size: 13px; }
+    footer { padding: 42px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; }
+    .footer-inner p { max-width: 760px; margin: 0; }
+    .back-top { font-weight: 900; color: var(--green); text-decoration: none; white-space: nowrap; }
+
+    @media (max-width: 860px) {
+      .hero-grid, .food-grid { grid-template-columns: 1fr; }
+      .route-card { min-height: 340px; transform: none; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .checklist { grid-template-columns: repeat(2, 1fr); }
+      .day-panel.active { grid-template-columns: 1fr; }
+      .day-summary { display: grid; grid-template-columns: auto 1fr; column-gap: 20px; align-items: center; }
+      .day-summary .number { grid-row: 1 / 3; }
+      .day-summary h3 { align-self: end; }
+    }
+    @media (max-width: 600px) {
+      .shell { width: min(100% - 22px, 1160px); }
+      .nav-links { display: none; }
+      .hero { padding-top: 45px; }
+      .hero h1 { font-size: 50px; }
+      .route-card { padding: 26px; }
+      .route-meta strong { font-size: 17px; }
+      section { padding: 48px 0; }
+      .section-head { display: block; }
+      .section-head p:last-child { margin-top: 12px; }
+      .grid, .stay-grid, .checklist { grid-template-columns: 1fr; }
+      .place-image { height: 225px; }
+      .timeline::before { display: none; }
+      .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+      .timeline-item h4 { margin-top: 0; }
+      .food-item { grid-template-columns: 42px 1fr; }
+      .food-item a { grid-column: 2; }
+      .footer-inner { display: block; }
+      .back-top { display: inline-block; margin-top: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body id="top">
+  <nav class="site-nav" aria-label="页面导航">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top">去<span>衢州</span>，正当时</a>
+      <div class="nav-links">
+        <a href="#schedule">行程</a>
+        <a href="#places">景点</a>
+        <a href="#food">美食</a>
+        <a href="#stay">住宿</a>
+        <a href="#tips">出发准备</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">2026 Summer Road Trip</p>
+        <h1>从如皋出发，<span>去衢州过周末。</span></h1>
+        <p class="hero-copy">7 月 17 日去，7 月 19 日回。两晚三天、全程自驾，以衢州古城为圆心，慢慢逛南孔圣地、吃鲜辣衢州菜、看水亭门亮灯。</p>
+        <div class="button-row">
+          <a class="button" href="https://uri.amap.com/navigation?from=120.574028,32.371493,%E5%A6%82%E7%9A%8B&to=118.860669,28.955962,%E8%A1%A2%E5%B7%9E&mode=car&policy=1&src=travel-guide&coordinate=gaode&callnative=0" target="_blank" rel="noopener">高德开启自驾导航</a>
+          <a class="button secondary" href="#schedule">查看三日安排</a>
+        </div>
+      </div>
+      <aside class="route-card" aria-label="路线概览">
+        <div class="route-date">FRI 07.17 — SUN 07.19</div>
+        <div class="route-line">
+          <div class="route-stop">江苏 · 如皋</div>
+          <div class="route-dash"></div>
+          <div class="route-stop">浙江 · 衢州</div>
+        </div>
+        <div class="route-meta">
+          <div><strong>约 510 km</strong><span>单程参考里程</span></div>
+          <div><strong>约 6 h</strong><span>不含休息拥堵</span></div>
+          <div><strong>2 晚</strong><span>住衢州古城周边</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <div class="shell">
+      <div class="notice-bar"><strong>夏日提醒：</strong>7 月衢州通常炎热且可能有阵雨。把户外步行放在早晚，中午安排博物馆、午休；出发前一天再核对天气、景点开放时间、门票预约与实时路况。</div>
+    </div>
+
+    <section id="schedule">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow">3-Day Rhythm</p><h2>松弛，但不留遗憾</h2></div>
+          <p>首尾两天照顾长途驾驶，中间一天深度走访古城。点击日期切换当天安排。</p>
+        </div>
+        <div class="day-tabs" role="tablist" aria-label="三日行程">
+          <button class="day-tab" role="tab" aria-selected="true" aria-controls="day-one" id="tab-one">7.17 · 抵达</button>
+          <button class="day-tab" role="tab" aria-selected="false" aria-controls="day-two" id="tab-two">7.18 · 漫游</button>
+          <button class="day-tab" role="tab" aria-selected="false" aria-controls="day-three" id="tab-three">7.19 · 返程</button>
+        </div>
+
+        <div class="day-panel active" id="day-one" role="tabpanel" aria-labelledby="tab-one">
+          <aside class="day-summary"><div class="number">01</div><h3>向南出发</h3><p>长途驾驶 + 古城夜游，第一天不赶景点。</p></aside>
+          <div class="timeline">
+            <article class="timeline-item"><time>07:00</time><div><h4>如皋出发</h4><p>提前加满油或充好电，导航先看沪武高速、长深高速一线实时路况；每 2 小时进服务区休息。</p><span class="tag">约 510 km</span><span class="tag">预留 6.5—7 h</span></div></article>
+            <article class="timeline-item"><time>12:00</time><div><h4>服务区午餐</h4><p>长途当天不安排重辣正餐，简单补给后再开 2—3 小时，避免疲劳驾驶。</p></div></article>
+            <article class="timeline-item"><time>15:00</time><div><h4>入住古城周边</h4><p>选府山公园、坊门街或水亭门 2—3 公里内的酒店，停好车后以步行和打车为主。</p><span class="tag">连住两晚</span><span class="tag">优先免费停车</span></div></article>
+            <article class="timeline-item"><time>17:30</time><div><h4>坊门街晚餐 → 水亭门夜游</h4><p>先尝鸭头、烤饼和本地菜，再沿古城墙、天王塔、衢江边散步。蓝调时刻到亮灯后最适合拍照。</p><span class="tag">夜景打卡</span><span class="tag">步行约 2 h</span></div></article>
+          </div>
+        </div>
+
+        <div class="day-panel" id="day-two" role="tabpanel" aria-labelledby="tab-two" hidden>
+          <aside class="day-summary"><div class="number">02</div><h3>南孔古城</h3><p>文化、街巷与江景结合，午间避暑休息。</p></aside>
+          <div class="timeline">
+            <article class="timeline-item"><time>08:30</time><div><h4>孔氏南宗家庙</h4><p>趁气温尚可先看南孔文化核心地标，建议预留 1—1.5 小时；衣着整洁，安静参观。</p><span class="tag">人文必去</span></div></article>
+            <article class="timeline-item"><time>10:15</time><div><h4>衢州博物馆 → 府山公园</h4><p>两处与家庙相邻，先在博物馆看衢州历史，再穿行府山绿荫；开放日与预约规则请提前核验。</p><span class="tag">室内避暑</span></div></article>
+            <article class="timeline-item"><time>12:15</time><div><h4>本地菜午餐 + 午休</h4><p>点三头一掌、鱼鲜或时令菜，不能吃辣要明确说“微辣、少油”；14:30 前回酒店休息。</p></div></article>
+            <article class="timeline-item"><time>16:00</time><div><h4>鹿鸣文化院街 → 鹿鸣公园</h4><p>傍晚到新城一侧散步，院街适合咖啡和建筑拍照，鹿鸣公园看草坪与日落；晚餐可在院街解决。</p><span class="tag">日落机位</span><span class="tag">舒适慢游</span></div></article>
+          </div>
+        </div>
+
+        <div class="day-panel" id="day-three" role="tabpanel" aria-labelledby="tab-three" hidden>
+          <aside class="day-summary"><div class="number">03</div><h3>带着香味回家</h3><p>轻量晨游、买伴手礼，午前踏上返程。</p></aside>
+          <div class="timeline">
+            <article class="timeline-item"><time>08:00</time><div><h4>古城晨间补拍</h4><p>早起去大南门遗址公园、坊门街拍安静街景；若前两天较累，可直接睡到自然醒。</p><span class="tag">机动安排</span></div></article>
+            <article class="timeline-item"><time>09:30</time><div><h4>早餐与伴手礼</h4><p>吃衢州烤饼、粉干，购买不老神鸡等熟食前确认保存条件；高温天建议使用保温袋。</p></div></article>
+            <article class="timeline-item"><time>11:00</time><div><h4>退房返程</h4><p>午前离开可给晚间留出余量。途中至少休息两次，遇强对流天气就近进入服务区等待。</p><span class="tag">安全优先</span></div></article>
+            <article class="timeline-item"><time>18:00</time><div><h4>预计抵达如皋</h4><p>时间仅作计划锚点，请以高德当天实时路况为准，不为了赶时间连续驾驶。</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="places">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow">Places & Photo Spots</p><h2>六个值得停留的地方</h2></div>
+          <p>核心点位来自高德地图检索。点击“高德详情”可继续查看位置、评价与实时营业信息。</p>
+        </div>
+        <div class="grid">
+          <article class="place-card">
+            <div class="place-image"><img src="https://store.is.autonavi.com/showpic/6d6a37f0dbe3804c0000003026786719?type=pic" alt="水亭门历史文化街区" loading="lazy"><span class="place-index">01</span></div>
+            <div class="place-body"><h3>水亭门历史文化街区</h3><p>古城墙、天王塔与衢江夜景集中地。建议日落前到达，从蓝调时刻一直拍到亮灯。</p><div class="place-footer"><span>县西街 · 夜游首选</span><a class="map-link" href="https://www.amap.com/place/B0FFK9U6TG" target="_blank" rel="noopener">高德详情 →</a></div></div>
+          </article>
+          <article class="place-card">
+            <div class="place-image"><img src="https://store.is.autonavi.com/showpic/e21a2d481b9f0b8ec6a2d3a67db7d648" alt="孔氏南宗家庙" loading="lazy"><span class="place-index">02</span></div>
+            <div class="place-body"><h3>孔氏南宗家庙</h3><p>衢州“南孔圣地”的文化核心。古建、碑刻与庭院适合慢看，和博物馆可步行串联。</p><div class="place-footer"><span>新桥街 96 号附近</span><a class="map-link" href="https://www.amap.com/place/B023A00E01" target="_blank" rel="noopener">高德详情 →</a></div></div>
+          </article>
+          <article class="place-card">
+            <div class="place-image"><img src="https://store.is.autonavi.com/showpic/c075aec8505864090000003095818720?type=pic" alt="衢州博物馆" loading="lazy"><span class="place-index">03</span></div>
+            <div class="place-body"><h3>衢州博物馆</h3><p>快速理解衢州历史的最佳室内站，也适合作为盛夏午间的避暑安排。留意闭馆日。</p><div class="place-footer"><span>新桥街 98 号</span><a class="map-link" href="https://www.amap.com/place/B023A0HY58" target="_blank" rel="noopener">高德详情 →</a></div></div>
+          </article>
+          <article class="place-card">
+            <div class="place-image"><img src="https://aos-comment.amap.com/B023A13YIQ/comment/content_media_external_file_420827_ss__1770470345386_92102831.jpg" alt="府山公园" loading="lazy"><span class="place-index">04</span></div>
+            <div class="place-body"><h3>府山公园</h3><p>古城里的绿荫与市井气，毗邻家庙、博物馆。适合晨间散步，不必单独开车前往。</p><div class="place-footer"><span>新桥街 · 免费漫步</span><a class="map-link" href="https://www.amap.com/place/B023A13YIQ" target="_blank" rel="noopener">高德详情 →</a></div></div>
+          </article>
+          <article class="place-card">
+            <div class="place-image"><img src="https://store.is.autonavi.com/showpic/393ca2ce43421c3702e088352c8ca9f8" alt="鹿鸣山文化院街" loading="lazy"><span class="place-index">05</span></div>
+            <div class="place-body"><h3>鹿鸣山文化院街</h3><p>新中式院落、餐厅与咖啡馆汇集，傍晚光线柔和。可与鹿鸣公园组成半日休闲路线。</p><div class="place-footer"><span>白云中大道附近</span><a class="map-link" href="https://www.amap.com/place/B0G1NL6GZW" target="_blank" rel="noopener">高德详情 →</a></div></div>
+          </article>
+          <article class="place-card">
+            <div class="place-image"><img src="https://store.is.autonavi.com/showpic/13ffc037ee4a8be298175b1d3ec8c313" alt="鹿鸣公园" loading="lazy"><span class="place-index">06</span></div>
+            <div class="place-body"><h3>鹿鸣公园</h3><p>草坪、江岸和开阔天际线很适合看日落。夏季避开正午，带驱蚊用品，雨后留意湿滑。</p><div class="place-footer"><span>白云南大道 · 日落</span><a class="map-link" href="https://www.amap.com/place/B0FFG8Y157" target="_blank" rel="noopener">高德详情 →</a></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="food-section" id="food">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow">Eat Like a Local</p><h2>衢州的鲜辣，要慢慢吃</h2></div>
+          <p>热门门店可能排队，餐厅仅作区域和口味参考；营业状态、价格与评价请在用餐当天通过高德复核。</p>
+        </div>
+        <div class="food-grid">
+          <div class="food-list">
+            <div class="food-item"><span class="food-icon">辣</span><div><h3>三头一掌</h3><p>兔头、鸭头、鱼头与鸭掌，香辣入味；初尝建议少量拼着点。</p></div><a href="https://www.amap.com/place/B023A0I6O4" target="_blank" rel="noopener">不老神（亭川）</a></div>
+            <div class="food-item"><span class="food-icon">鲜</span><div><h3>本地鱼鲜</h3><p>衢江水系带来的家常鲜味，可问当日鱼种与做法。</p></div><a href="https://www.amap.com/place/B0FFG4KETU" target="_blank" rel="noopener">老二鱼庄</a></div>
+            <div class="food-item"><span class="food-icon">宴</span><div><h3>品质衢州菜</h3><p>想吃得舒适完整，可选环境较好的本地菜馆，提前电话订位。</p></div><a href="https://www.amap.com/place/B0JABSSTM6" target="_blank" rel="noopener">方家菜谱禧园</a></div>
+            <div class="food-item"><span class="food-icon">饼</span><div><h3>衢州烤饼与粉干</h3><p>适合早餐或加餐，烤饼小而酥香，街区内见到现烤店可尝。</p></div><a href="https://uri.amap.com/search?keyword=%E8%A1%A2%E5%B7%9E%E7%83%A4%E9%A5%BC&city=%E8%A1%A2%E5%B7%9E&src=travel-guide" target="_blank" rel="noopener">附近搜索</a></div>
+          </div>
+          <aside class="tip-card">
+            <h3>点菜不踩雷</h3>
+            <ul>
+              <li>衢州“微辣”也可能比想象中辣，不能吃辣要直接说“不放辣”。</li>
+              <li>两个人不要一次点齐“三头一掌”，先选 1—2 种，再配清淡蔬菜和主食。</li>
+              <li>鸭头、鸭掌适合夜宵；驾驶员不饮酒，返酒店优先步行或打车。</li>
+              <li>不老神鸡可作为伴手礼，高温返程先问清保质与冷藏要求。</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="stay">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow">Stay for 2 Nights</p><h2>住对区域，比换酒店重要</h2></div>
+          <p>两晚连住，减少整理与搬运行李。2026 年暑期价格尚会变化，建议选择可取消房型。</p>
+        </div>
+        <div class="stay-grid">
+          <article class="stay-card recommended">
+            <span class="stay-label">首选区域</span><h3>古城 / 府山公园周边</h3>
+            <p>去孔庙、博物馆、坊门街和水亭门都方便。下午入住后不再挪车，晚间步行最轻松。</p>
+            <div class="stay-points"><span>位置优先</span><span>夜游方便</span><span>连住两晚</span></div>
+            <a href="https://uri.amap.com/search?keyword=%E8%A1%A2%E5%B7%9E%E5%8F%A4%E5%9F%8E%E9%85%92%E5%BA%97&city=%E8%A1%A2%E5%B7%9E&src=travel-guide" target="_blank" rel="noopener">高德查看周边酒店 →</a>
+          </article>
+          <article class="stay-card">
+            <span class="stay-label">舒适备选</span><h3>鹿鸣新区 / 西区</h3>
+            <p>酒店通常更新、停车相对省心，去鹿鸣公园方便；前往古城需要约车或自驾，以实时路况为准。</p>
+            <div class="stay-points"><span>停车友好</span><span>环境安静</span><span>餐饮集中</span></div>
+            <a href="https://uri.amap.com/search?keyword=%E9%B9%BF%E9%B8%A3%E5%85%AC%E5%9B%AD%E9%99%84%E8%BF%91%E9%85%92%E5%BA%97&city=%E8%A1%A2%E5%B7%9E&src=travel-guide" target="_blank" rel="noopener">高德查看周边酒店 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tips">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="eyebrow">Before You Go</p><h2>出发前，再检查一遍</h2></div>
+          <p>长途自驾的舒适感，来自充足时间和少做决定。以下项目建议 7 月 16 日最终确认。</p>
+        </div>
+        <div class="checklist">
+          <div class="check-item"><strong>车辆状态</strong><span>胎压、油量或电量、玻璃水、随车工具；确认高速充电点。</span></div>
+          <div class="check-item"><strong>预约开放</strong><span>孔氏南宗家庙、博物馆的开放时间、预约规则与临时公告。</span></div>
+          <div class="check-item"><strong>防晒防雨</strong><span>遮阳帽、防晒霜、雨伞、驱蚊液、饮用水和少量电解质饮料。</span></div>
+          <div class="check-item"><strong>停车住宿</strong><span>向酒店确认免费停车、最晚入住和新能源充电条件。</span></div>
+          <div class="check-item"><strong>实时路况</strong><span>单程约 510 km / 6 小时仅为规划值，以高德出发时导航为准。</span></div>
+          <div class="check-item"><strong>雨天替代</strong><span>延长博物馆和午休，缩短公园活动；雷雨时不在江边逗留。</span></div>
+          <div class="check-item"><strong>舒适穿搭</strong><span>透气衣物、防滑鞋；参观家庙避免过于随意的着装。</span></div>
+          <div class="check-item"><strong>返程食品</strong><span>熟食使用保温袋，问清保存方式，不把易坏食品留在高温车内。</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <p>路线与地点信息基于高德地图检索结果整理，页面不代表景区或商户的实时承诺。里程、车程、营业时间、门票、停车和天气均可能变化，请在 2026 年 7 月出发前复核。</p>
+      <a class="back-top" href="#top">回到顶部 ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const dayTabs = Array.from(document.querySelectorAll(".day-tab"));
+    const dayPanels = Array.from(document.querySelectorAll(".day-panel"));
+
+    function showSelectedDay(selectedTab) {
+      const selectedPanelId = selectedTab.getAttribute("aria-controls");
+
+      dayTabs.forEach((dayTab) => {
+        dayTab.setAttribute("aria-selected", String(dayTab === selectedTab));
+      });
+
+      dayPanels.forEach((dayPanel) => {
+        const isSelectedPanel = dayPanel.id === selectedPanelId;
+        dayPanel.classList.toggle("active", isSelectedPanel);
+        dayPanel.hidden = !isSelectedPanel;
+      });
+    }
+
+    dayTabs.forEach((dayTab) => {
+      dayTab.addEventListener("click", () => showSelectedDay(dayTab));
+    });
+  </script>
+</body>
+</html>
